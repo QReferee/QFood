@@ -15,7 +15,7 @@ class NewsController extends Controller
     public function index()
     {
         return Inertia::render('Admin/News', [
-            'news' => News::query()->get()
+            'news' => News::query()->orderBy('id', 'desc')->get()
         ]);
     }
 

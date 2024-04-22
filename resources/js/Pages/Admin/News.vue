@@ -19,7 +19,7 @@ defineProps({
             <div class="card" v-for="post in news">
                 <div>
                     <p class="text-xl">{{ post.name }}</p>
-                    <p class="text-gray-400 text-sm">{{ post.summary }}</p>
+                    <p class="text-gray-400 text-sm" v-html="post.summary"></p>
                 </div>
 
                 <Link :href="route('admin.news.delete', [post.id])" class="ml-auto icon-trush transition-all cursor-pointer">

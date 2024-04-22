@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\v1\News\NewsController;
 use App\Http\Controllers\ProfileController;
+use App\Models\News;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -11,16 +12,16 @@ Route::get('/', function () {
 });
 
 Route::get('/news', function () {
-    return view('news', [
-        'news' => \App\Models\News::query()->get()
+    return Inertia::render('News', [
+        'news' => News::query()->orderBy('id', 'desc')->get()
     ]);
-});
+})->name('news');
 
 Route::get('/news/{id}', function ($id) {
-    return view('post', [
-        'news' => \App\Models\News::query()->where('id', $id)->get()
+    return inertia('Post', [
+        'post' => \App\Models\News::query()->where('id', $id)->first()
     ]);
-});
+})->name('page');
 
 Route::prefix('/admin/admin/')->name('admin.')->group(function () {
     Route::prefix('news')->name('news.')->group(function () {

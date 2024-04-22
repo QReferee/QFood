@@ -32,9 +32,8 @@ const sendForm = () => {
             <div class="flex">
                 <div class="header">
                     <img src="img/logo.webp" alt="Logo" class="logo">
-                    <a class="header_link" href="#contacts">Обратная связь</a>
+                    <Link class="header_link" href="#contacts">Обратная связь</Link>
 <!--                    <Link class="header_link" href="/news">Новости</Link>-->
-                    <a class="header_link" href="/news">Новости</a>
                 </div>
 
                 <div class="title_div">
@@ -46,8 +45,8 @@ const sendForm = () => {
                 <p>Продавайте онлайн без комиссий за заказы,
                     Гости смогут сделать заказ и оплатить его прямо на сайте — неважно, доставка или заказ с собой.</p>
                 <div class="contact_links">
-                    <a href="tel:+79939036654" class="header_link">+7 993 903 6654</a>
-                    <a href="#price" class="header_link">Прайс-лист</a>
+                    <Link href="tel:+79939036654" class="header_link">+7 993 903 6654</Link>
+                    <Link href="#price" class="header_link">Прайс-лист</Link>
                 </div>
             </div>
 
@@ -56,12 +55,12 @@ const sendForm = () => {
                 <img src="img/bga.webp" alt="Cart BG" class="cart_img">
                 <div class="flex_blocks">
 
-                    <div class="cart_block" style="background: #d6caff;" onclick="location.href='#system-info';">
+                    <Link :href="route('news')" class="cart_block" style="background: #d6caff;" >
 
-                        <h3>Возможности и приемущества</h3>
+                        <h3>Интересные статьи</h3>
                         <img src="img/features.webp" alt="features" class="bcart_img">
                         <p>Подробнее</p>
-                    </div>
+                    </Link>
                     <div class="cart_block" style="background: #cbffdb;"
                          onclick="location.href='https://demo.qfood.site';">
 
